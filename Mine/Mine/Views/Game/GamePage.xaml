@@ -9,7 +9,7 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <Image HeightRequest="200" WidthRequest="200" Source="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Seattle_Redhawks_logo.svg/914px-Seattle_Redhawks_logo.svg.png"/>
-            <Button Clicked="GameButton_Clicked" Text="Go RedHawks" />
+            <Button Clicked="GameButton_Clicked" Text="Go Redhawks"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
