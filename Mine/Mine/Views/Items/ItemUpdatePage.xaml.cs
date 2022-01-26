@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Mine.Models;
+using Mine.ViewModels;
 
 namespace Mine.Views
 {
