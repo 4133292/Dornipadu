@@ -27,6 +27,14 @@ namespace Mine.ViewModels
                 DataSet.Add(newItem);
                 await DataStore.CreatAsync(newItem);
             });
+
+            MessagingCenter.Subscribe<ItemDeletePage, ItemModel>(this, "DeleteItem", async (obj, item) =>
+            {
+                var data = item as ItemModel;
+                
+                await DeleteAsync(data);
+            });
+
         }
 
 
