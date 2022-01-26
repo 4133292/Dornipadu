@@ -69,5 +69,28 @@ namespace Mine.ViewModels
             return result;
 
         }
+
+        ///<summary>
+        ///Delete the record from the record
+        ///</summary>
+        ///<param name="data">The record to Delete</param>
+        ///<returns>True if Deleted</returns>
+        public async Task<bool> DeleteAsync(ItemModel data)
+        {
+            //Check if the record exists, if it does not, null will be returned
+            var record = await ReadAsync(data.Id);
+            if (record != null)
+            {
+
+                //Remove from local dataset cache
+                DataSet.Remove(data);
+
+                //Call to remove it from the data store
+                var result = await DataStore.DeleteAsync(data.Id);
+
+                return result;
+            }
+            return false;
+        }
     }
 }
