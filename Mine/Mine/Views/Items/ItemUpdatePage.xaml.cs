@@ -28,6 +28,18 @@ namespace Mine.Views
             BindingContext = this;
         }
 
+        /// <summary>
+        /// Constructor that takes a view model
+        /// </summary>
+        /// <param name="viewModel"></param>
+        public ItemUpdatePage(ItemReadViewModel viewModel)
+        {
+            InitializeComponent();
+            Item = viewModel.Item;
+
+            BindingContext = this;
+        }
+
         async void Save_Clicked(object sender, EventArgs e)
         {
             MessagingCenter.Send(this, "AddItem", Item);
