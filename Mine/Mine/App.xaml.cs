@@ -13,7 +13,10 @@ namespace Mine
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            ///<summary>
+            ///The data is loaded from DatabaseService
+            ///</summary>
+            DependencyService.Register<DatabaseService>();
             MainPage = new MainPage();
         }
 
