@@ -115,22 +115,20 @@ namespace Mine.ViewModels
         ///<returns>True if Updated</returns>
         public async Task<bool> UpdateAsync(ItemModel data)
         {
-            //Check if the record exists, if it does not, null will be returned
+            //Check if record exists, if it does not, then null is returned
             var record = await ReadAsync(data.Id);
             if (record == null)
             {
                 return false;
             }
+            //Call to update it in the DataStore
+            var result = await DataStore.UpdateAsync(data);
 
-                //Call to remove it from the data store
-                var result = await DataStore.UpdateAsync(data);
+            var canExecute = LoadItemsCommand.CanExecute(null);
+            LoadItemsCommand.Execute(null);
 
-                var canExecute = LoadItemsCommand.CanExecute(null);
-                LoadItemsCommand.Execute(null);
-
-                return result;
-            
-            return false;
+            return result;
         }
+
     }
 }
