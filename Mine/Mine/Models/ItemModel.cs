@@ -1,4 +1,5 @@
 ﻿using System;
+using SQLite;
 /// <summary>
 /// Items for Characters and Monsters to use
 /// </summary>
@@ -7,7 +8,8 @@ namespace Mine.Models
     public class ItemModel
     {
         // The Id for the Item
-        public string Id { get; set; }
+        [PrimaryKey]
+        public string Id { get; set; } = Guid.NewGuid().ToString();
         // The Display Text for the Item
         public string Text { get; set; }
         // The Description for the Item
