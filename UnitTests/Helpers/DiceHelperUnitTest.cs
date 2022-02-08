@@ -13,12 +13,13 @@ namespace UnitTests.Helpers
             // Arrange
 
             // Act
-            var result = DiceHelper.RollDice(0, 1);
+            var result = DiceHelper.RollDice(1, 6);
 
             // Reset
 
             // Assert 
-            Assert.AreEqual(0, result);
+            Assert.AreEqual(true, result >= 1);
+            Assert.AreEqual(true, result <= 6);
         }
     }
 }
