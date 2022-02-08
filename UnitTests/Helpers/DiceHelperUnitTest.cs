@@ -82,5 +82,21 @@ namespace UnitTests.Helpers
             // Assert 
             Assert.AreEqual(0, result);
         }
+
+        [Test]
+        public void RollDice_InValid_Roll_1_Dice_0_Should_Return_Zero()
+        {
+            // Arrange
+            DiceHelper.ForceRollsToNotRandom = false;
+
+            // Act
+            var result = DiceHelper.RollDice(1, 0);
+
+            // Reset
+            DiceHelper.ForceRollsToNotRandom = true;
+
+            // Assert
+            Assert.AreEqual(0, result);
+        }
     }
 }
