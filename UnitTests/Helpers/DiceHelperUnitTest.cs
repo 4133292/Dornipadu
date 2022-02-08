@@ -21,8 +21,8 @@ namespace UnitTests.Helpers
             Assert.AreEqual(0, result);
         }
 
-        [Test]
 
+        [Test]
         public void RollDice_Valid_Roll_1_Dice_6_Should_Return_Between_1_And_6()
         {
             // Arrange
@@ -34,7 +34,7 @@ namespace UnitTests.Helpers
 
             // Assert 
             Assert.AreEqual(true, result >= 1);
-            Assert.AreEqual(true, result >= 6);
+            Assert.AreEqual(true, result <= 6);
         }
     }
 }
