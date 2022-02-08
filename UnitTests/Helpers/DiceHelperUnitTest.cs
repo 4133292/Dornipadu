@@ -8,7 +8,7 @@ namespace UnitTests.Helpers
     public class DiceHelperTests
     {
         [Test]
-        public void RollDice_Invalid_Roll_Zero_Should_Return_Zero()
+        public void RollDice_Valid_Roll_1_Dice_6_Should_Return_Between_1_AND_6()
         {
             // Arrange
 
